@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+begin
+  require "contactsd"
+rescue LoadError
+  $:.unshift File.absolute_path('../../lib', __FILE__)
+end
+
+require "contactsd"
+
+Contactsd::CLI.start
